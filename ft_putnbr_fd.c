@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:21:19 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/25 12:42:21 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:11:28 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putnbr_fd(int nb, int fd)
 	{
 		ft_putchar_fd('-', fd);
 		ft_putchar_fd('2', fd);
-		nb = 147483648; 
+		nb = 147483648;
 	}
 	if (nb < 0)
 	{

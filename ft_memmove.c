@@ -6,12 +6,12 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:35:38 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/14 10:36:10 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:10:02 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// TODO 1 Abort
+
 void	*ft_memmove(void *dest, void *src, size_t len)
 {
 	char	*c_src;

@@ -6,12 +6,11 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:10:33 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/17 12:06:34 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:09:33 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(unsigned int count, unsigned int size)
 {

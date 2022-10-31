@@ -6,12 +6,12 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:55:26 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/17 09:56:39 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:11:03 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// TODO 1 FAILS
+
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')

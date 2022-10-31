@@ -6,12 +6,11 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:51:31 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/19 13:50:42 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:10:31 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(char *src)
 {

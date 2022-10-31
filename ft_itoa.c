@@ -6,15 +6,15 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 08:36:01 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/31 14:01:24 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:09:44 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int        len(long nb)
+int	len(long nb)
 {
-	int        len;
+	int	len;
 
 	len = 0;
 	if (nb < 0)

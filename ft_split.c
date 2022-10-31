@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:33:30 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/31 12:50:50 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:10:24 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	count(const char *str, char c)
 	return (i);
 }
 
-static char *dupe(const char *str, int start, int end)
+static char	*dupe(const char *str, int start, int end)
 {
 	char	*word;
 	int		i;

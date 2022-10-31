@@ -6,12 +6,12 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:17:19 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/19 13:51:04 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:09:22 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// TODO 6 FAILS
+
 static int	check_limit(int base, char *str, int i, int sign);
 
 int	ft_atoi(char *str)

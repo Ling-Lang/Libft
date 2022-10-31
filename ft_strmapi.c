@@ -6,12 +6,11 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:57:48 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/24 13:13:01 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:10:44 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

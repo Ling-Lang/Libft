@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:16:00 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/24 12:19:25 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:11:38 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		f(i, s + i);
 		i++;
 	}
-
 }

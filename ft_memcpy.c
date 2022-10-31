@@ -6,15 +6,17 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:57:30 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/13 13:08:14 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/31 14:14:48 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, void *src, unsigned int n)
 {
-	char	*csrc;
-	char	*cdest;
-	int		i;
+	char				*csrc;
+	char				*cdest;
+	unsigned int		i;
 
 	csrc = src;
 	cdest = dest;
