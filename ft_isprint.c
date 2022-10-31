@@ -6,9 +6,11 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 09:04:52 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 09:14:08 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/12 11:39:38 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

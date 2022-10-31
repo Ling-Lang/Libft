@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/19 14:29:33 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/31 12:10:27 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if ((c >= 060 && c <= 071))
+	const char	*str1;
+	const char	*str2;
+	size_t		i;
+
+	i = 0;
+	str1 = (const char *)s1;
+	str2 = (const char *)s2;
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		return (1);
-	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
-	{
-		return (1);
+		if (str1[i] != str2[i])
+		{
+			return (str1[i] - str2[i]);
+		}
+		i++;
 	}
 	return (0);
 }

@@ -6,11 +6,13 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 09:15:32 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:05:21 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/10/27 10:50:00 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 

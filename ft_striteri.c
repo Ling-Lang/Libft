@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/24 12:16:00 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/24 12:19:25 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if ((c >= 060 && c <= 071))
+	unsigned int	i;
+
+	if (!s || !f)
 	{
-		return (1);
+		return ;
 	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
+	i = 0;
+	while (s[i])
 	{
-		return (1);
+		f(i, s + i);
+		i++;
 	}
-	return (0);
+
 }

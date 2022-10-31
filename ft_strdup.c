@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/13 12:51:31 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/19 13:50:42 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int	ft_isalnum(int c)
+char	*ft_strdup(char *src)
 {
-	if ((c >= 060 && c <= 071))
+	int		len;
+	char	*str;
+
+	len = 0;
+	while (src[len])
 	{
-		return (1);
+		len++;
 	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
+	str = malloc(len + 1);
+	if (str == NULL)
 	{
-		return (1);
+		return (NULL);
 	}
-	return (0);
+	while (len >= 0)
+	{
+		str[len] = src[len];
+		len--;
+	}
+	return (str);
 }

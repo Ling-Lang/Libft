@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/14 10:49:50 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/28 10:19:52 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	if ((c >= 060 && c <= 071))
+	unsigned int	count;
+	int				i;
+
+	i = 0;
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
+	count = ft_strlen(dest);
+	while (src[i] != '\0' && count + 1 < size)
 	{
-		return (1);
+		dest[count] = src[i];
+		count++;
+		i++;
 	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
-	{
-		return (1);
-	}
-	return (0);
+	dest[count] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[i]));
 }

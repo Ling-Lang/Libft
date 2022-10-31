@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/24 11:24:03 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/24 12:06:30 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if ((c >= 060 && c <= 071))
+	char	*str;
+	int		i;
+	int		j;
+
+	str = (char *)malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
+	if (!s1 || !s2 ||!(str))
 	{
-		return (1);
+		return (0);
 	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		return (1);
+		str[i] = s1[i];
+		i++;
 	}
-	return (0);
+	j = 0;
+	while (s2[j] != '\0')
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	return (str);
 }

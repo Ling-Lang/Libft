@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/18 11:21:19 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/25 12:42:21 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	if ((c >= 060 && c <= 071))
+	if (nb == -2147483648)
 	{
-		return (1);
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		nb = 147483648; 
 	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
+	if (nb < 0)
 	{
-		return (1);
+		ft_putchar_fd('-', fd);
+		nb *= -1;
 	}
-	return (0);
+	if (nb < 10)
+	{
+		ft_putchar_fd(nb + 48, fd);
+		return ;
+	}
+	else
+	{
+		ft_putnbr_fd(nb / 10, fd);
+	}
+	ft_putnbr_fd(nb % 10, fd);
 }

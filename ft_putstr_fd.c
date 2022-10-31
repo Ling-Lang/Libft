@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/18 11:16:34 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/19 13:50:09 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putstr_fd(char *str, int fd)
 {
-	if ((c >= 060 && c <= 071))
+	while (*str != '\0')
 	{
-		return (1);
+		ft_putchar_fd(*str, fd);
+		str++;
 	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
-	{
-		return (1);
-	}
-	return (0);
 }

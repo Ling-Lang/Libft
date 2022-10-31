@@ -1,41 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 09:38:29 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/14 11:32:11 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/20 08:36:01 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/31 14:01:24 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t len)
+int        len(long nb)
 {
-	char		*d;
-	char		*e;
-	char		*s;
+	int        len;
 
-	d = dest;
-	e = dest + len;
-	s = src;
-	while (*s != '\0' && d < e)
+	len = 0;
+	if (nb < 0)
 	{
-		*d++ = *s++;
+		nb = nb * -1;
+		len++;
 	}
-	if (d < e)
+	while (nb > 0)
 	{
-		*d = 0;
+		nb = nb / 10;
+		len++;
 	}
-	else if (len > 0)
+	return (len);
+}
+
+char	*ft_itoa(int nb)
+{
+	char	*str;
+	int		i;
+
+	i = len(nb);
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	str[i--] = '\0';
+	if (nb == 0)
 	{
-		d[-1] = 0;
+		str[0] = 48;
+		return (str);
 	}
-	while (*s != '\0')
+	if (nb < 0)
 	{
-		s++;
+		str[0] = '-';
+		nb = nb * -1;
 	}
-	return (s - src);
+	while (nb > 0)
+	{
+		str[i] = 48 + (nb % 10);
+		nb = nb / 10;
+		i--;
+	}
+	return (str);
 }

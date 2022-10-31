@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 17:48:42 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/12 11:39:45 by jkulka           ###   ########.fr       */
+/*   Created: 2022/10/13 12:57:30 by jkulka            #+#    #+#             */
+/*   Updated: 2022/10/13 13:08:14 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+void	*ft_memcpy(void *dest, void *src, int n)
 {
-	if ((c >= 060 && c <= 071))
+	char	*csrc;
+	char	*cdest;
+	int		i;
+
+	csrc = src;
+	cdest = dest;
+	i = 0;
+	while (i < n)
 	{
-		return (1);
+		cdest[i] = csrc[i];
+		i++;
 	}
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
-	{
-		return (1);
-	}
-	return (0);
+	return (dest);
 }
