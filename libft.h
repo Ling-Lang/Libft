@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:53:20 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/27 10:51:37 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/03 16:02:42 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t len);
 char	*itoa(int n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}t_list;
 #endif
