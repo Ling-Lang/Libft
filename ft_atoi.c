@@ -6,12 +6,12 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:17:19 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/19 13:51:04 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/14 14:38:39 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// TODO 6 FAILS
+
 static int	check_limit(int base, char *str, int i, int sign);
 
 int	ft_atoi(char *str)
@@ -23,7 +23,8 @@ int	ft_atoi(char *str)
 	sign = 1;
 	base = 0;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 	{
 		i++;
 	}

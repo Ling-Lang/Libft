@@ -17,11 +17,11 @@ void	*ft_memmove(void *dest, void *src, size_t len)
 	char	*c_src;
 	char	*c_dest;
 
-	c_src = src;
-	c_dest = dest;
+	c_src = (char *)src;
+	c_dest = (char *)dest;
 	if ((c_src < c_dest) && (c_dest < c_src + len))
 	{
-		while (ft_strlen(src) > len)
+		while (ft_strlen(src) < len)
 		{
 			*--c_dest = *--c_src;
 			len--;
