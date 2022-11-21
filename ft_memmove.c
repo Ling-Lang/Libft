@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:35:38 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/31 14:07:44 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/21 11:21:55 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 void	*ft_memmove(void *dest, void *src, size_t len)
 {
-	char	*c_src;
-	char	*c_dest;
+	char				*c_src;
+	char				*c_dest;
+	unsigned int		i;
 
+	if (!dest && !src)
+		return (NULL);
 	c_src = (char *)src;
 	c_dest = (char *)dest;
-	if ((c_src < c_dest) && (c_dest < c_src + len))
+	i = 0;
+	if ((c_dest > c_src))
 	{
-		while (ft_strlen(src) < len)
+		while (len-- > 0)
 		{
-			*--c_dest = *--c_src;
-			len--;
+			c_dest[len] = c_src[len];
 		}
 	}
 	else
 	{
-		while (len--)
+		while (i < len)
 		{
-			*c_dest++ = *c_src++;
+			c_dest[i] = c_src[i];
+			i++;
 		}
 	}
-	return (dest);
+	return ((void *)c_dest);
 }
