@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:24:03 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/24 12:06:30 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/21 13:12:04 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
+	if (!s1)
+		return (NULL);
 	str = (char *)malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
 	if (!s1 || !s2 ||!(str))
 	{

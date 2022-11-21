@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:00:25 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/10 10:01:04 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/21 13:10:54 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char		*str;
 
 	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
+	if (!s || !str)
 	{
 		return (NULL);
 	}
