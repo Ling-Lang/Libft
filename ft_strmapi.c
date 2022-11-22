@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:57:48 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/11 10:22:45 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/22 10:23:31 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (s[i])
 		i++;
 	dest = (char *)malloc(i + 1);
-	if (dest == NULL)
-		return (0);
+	if (dest == NULL || s == 0)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

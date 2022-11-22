@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:33:30 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/21 13:13:49 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/22 12:15:59 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ char	**ft_split(char const *s, char c)
 	size_t		j;
 	int			index;
 	char		**split;
-	
-	if (!s)
-		return (NULL);
+
 	split = malloc((count(s, c) + 1) * sizeof(char *));
 	if (!s || !(split))
 		return (NULL);
