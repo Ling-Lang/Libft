@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 08:36:01 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/21 14:39:42 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/22 13:33:53 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,15 @@ char	*ft_itoa(int nb)
 	char	*str;
 	int		i;
 
-	if (nb == -2147483648)
-		return ("-2147483648");
 	i = len(nb);
-	str = (char *)malloc(sizeof(char) * (i + 1));
+	str = (char *)malloc(sizeof(char) * (i + 2));
+	if (!str)
+		return (NULL);
 	str[i--] = '\0';
 	if (nb == 0)
-	{
-		str[0] = 48;
-		return (str);
-	}
+		return ("0");
+	if (nb == -2147483648)
+		return ("-2147483648");
 	if (nb < 0)
 	{
 		str[0] = '-';
