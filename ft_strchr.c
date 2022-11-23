@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:48:24 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/21 12:05:53 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/23 12:16:53 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ char	*ft_strchr(const char *s, int c)
 		}
 		return (NULL);
 	}
-	abort ();
+	return (NULL);
 }
