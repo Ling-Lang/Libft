@@ -6,21 +6,22 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 08:36:01 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/23 15:01:00 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/30 13:08:41 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len(long nb)
+static int	ft_len(long int nb)
 {
 	int	len;
 
 	len = 0;
+	if (nb == 0)
+		return (1);
 	if (nb < 0)
 	{
 		nb = nb * -1;
-		len++;
 	}
 	while (nb > 0)
 	{
@@ -30,30 +31,42 @@ int	len(long nb)
 	return (len);
 }
 
-char	*ft_itoa(int nb)
+char	*ft_createstr(char *str, long int n, int end, int i)
 {
-	char	*str;
-	int		i;
-
-	i = len(nb);
-	str = (char *)malloc(sizeof(char) * (i + 2));
-	if (!str)
-		return (NULL);
-	str[i--] = '\0';
-	if (nb == 0)
-		return ("0");
-	if (nb == -2147483648)
-		return ("-2147483648");
-	if (nb < 0)
+	if (n < 0)
+		n *= -1;
+	if (n == 0)
+		str[0] = '0';
+	while (i > end - 1)
 	{
-		str[0] = '-';
-		nb = nb * -1;
-	}
-	while (nb > 0)
-	{
-		str[i] = 48 + (nb % 10);
-		nb = nb / 10;
+		str[i] = (n % 10) + '0';
+		n = n / 10;
 		i--;
 	}
+	if (end == 1)
+		str[0] = '-';
 	return (str);
+}
+
+char	*ft_itoa(int nb)
+{
+	char		*str;
+	int			i;
+	int			len;
+	int			end;
+	long int	n;
+
+	end = 0;
+	n = (long int)nb;
+	len = ft_len(nb);
+	if (n < 0)
+	{
+		len++;
+		end = 1;
+	}
+	i = len - 1;
+	str = (char *)ft_calloc(1, sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	return (ft_createstr(str, nb, end, i));
 }

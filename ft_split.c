@@ -6,12 +6,13 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:33:30 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/22 12:15:59 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/30 13:32:31 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//
 static int	count(const char *str, char c)
 {
 	int	i;
@@ -52,14 +53,14 @@ static char	*dupe(const char *str, int start, int end)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		j;
-	int			index;
-	char		**split;
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
 
-	split = malloc((count(s, c) + 1) * sizeof(char *));
-	if (!s || !(split))
+	if (s == NULL || !c)
 		return (NULL);
+	split = malloc((count(s, c) + 1) * sizeof(char *));
 	i = 0;
 	j = 0;
 	index = -1;

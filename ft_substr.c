@@ -6,34 +6,40 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:00:25 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/21 13:10:54 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/30 12:51:23 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static size_t	ft_strnlen(const char *str, size_t n)
 {
-	size_t		i;
-	size_t		j;
-	char		*str;
+	const char	*ptr;
 
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!s || !str)
+	ptr = str;
+	while (*ptr && n)
 	{
+		ptr++;
+		n--;
+	}
+	return (ptr - str);
+}
+
+char	*ft_substr(char const *str, unsigned int start, size_t n)
+{
+	size_t	length;
+	char	*new_str;
+
+	if (!str)
 		return (NULL);
-	}
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	str[j] = 0;
-	return (str);
+	length = ft_strlen(str);
+	if (length < start)
+		start = length;
+	str += start;
+	n = ft_strnlen(str, n);
+	new_str = (char *)ft_calloc(n + 1, sizeof(char));
+	if (!new_str)
+		return (NULL);
+	ft_memcpy(new_str, (void *)str, n);
+	return (new_str);
 }

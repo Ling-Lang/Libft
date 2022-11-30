@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:22:28 by jkulka            #+#    #+#             */
-/*   Updated: 2022/10/31 14:07:03 by jkulka           ###   ########.fr       */
+/*   Updated: 2022/11/30 13:05:20 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (i > 0)
 	{
 		if (end[i] == find)
-		{
 			return (end + i);
-		}
 		i--;
 	}
 	if (end[i] == find)
-	{
 		return (end);
-	}
 	return (0);
 }
