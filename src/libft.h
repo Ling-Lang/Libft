@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:53:20 by jkulka            #+#    #+#             */
-/*   Updated: 2022/12/01 10:13:33 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/03/21 11:28:26 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
-
+#include "ft_printf.h"
 typedef struct s_list
 {
 	void			*content;

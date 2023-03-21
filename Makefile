@@ -50,27 +50,35 @@ BONUS = src/ft_lstadd_back_bonus.c \
 		src/ft_lstmap_bonus.c \
 		src/ft_lstnew_bonus.c \
 		src/ft_lstsize_bonus.c
+PRINTF = src/ft_iutils.c \
+		src/ft_printf.c \
+		src/ft_printf_utils.c \
+		src/ft_printf_utils_2.c
 
 MANDOOBJ	= $(MANDO:.c=.o)
 BONUSOBJ = $(BONUS:.c=.o)
+PRINTFOBJ = $(PRINTF:.c=.o)
 
-$(NAME): $(MANDOOBJ)
+$(NAME): $(MANDOOBJ) $(PRINTFOBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
 bonus: $(BONUSOBJ)
+	$(AR) $(ARFLAGS) $(NAME) $^
+
+printf: $(PRINTFOBJ)
 	$(AR) $(ARFLAGS) $(NAME) $^
 
 %.o : %.c
 	$(CC) -c $(CFLAGS) $(INCFLAG) $< -o $@
 
 clean:
-	$(RM) $(MANDOOBJ) $(BONUSOBJ)
+	$(RM) $(MANDOOBJ) $(BONUSOBJ) $(PRINTFOBJ)
 
 fclean: clean
 	$(RM) ${NAME}
 
 re: fclean all
 
-all: $(NAME) bonus
+all: $(NAME) bonus printf
 
 .PHONY: all clean fclean re bonus
