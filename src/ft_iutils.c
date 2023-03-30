@@ -28,10 +28,6 @@ char	*ft_itoa_base(unsigned long n, int low)
 		return (NULL);
 	if (n == 0)
 		res[0] = '0';
-	if (n < 0)
-	{
-		res[0] = '-';
-	}
 	while (len-- && n)
 	{
 		res[len] = base[n % 16];

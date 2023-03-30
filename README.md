@@ -27,6 +27,8 @@ output:
 Hello World is 11 long
 ```
 
+
+This library also includes my own implementation of Printf
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
