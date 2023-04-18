@@ -54,12 +54,16 @@ PRINTF = src/ft_iutils.c \
 		src/ft_printf.c \
 		src/ft_printf_utils.c \
 		src/ft_printf_utils_2.c
+GNL    = src/gnl/get_next_line_bonus.c\
+		src/gnl/get_next_line_utils_bonus.c
 
 MANDOOBJ	= $(MANDO:.c=.o)
 BONUSOBJ = $(BONUS:.c=.o)
 PRINTFOBJ = $(PRINTF:.c=.o)
+GNLOBJ = $(GNL:.c=.o)
 
-$(NAME): $(MANDOOBJ) $(PRINTFOBJ)
+
+$(NAME): $(MANDOOBJ) $(PRINTFOBJ) $(GNLOBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
 bonus: $(BONUSOBJ)
@@ -68,17 +72,20 @@ bonus: $(BONUSOBJ)
 printf: $(PRINTFOBJ)
 	$(AR) $(ARFLAGS) $(NAME) $^
 
+printf: $(GNLOBJ)
+	$(AR) $(ARFLAGS) $(NAME) $^
+
 %.o : %.c
 	$(CC) -c $(CFLAGS) $(INCFLAG) $< -o $@
 
 clean:
-	$(RM) $(MANDOOBJ) $(BONUSOBJ) $(PRINTFOBJ)
+	$(RM) $(MANDOOBJ) $(BONUSOBJ) $(PRINTFOBJ) $(GNLOBJ)
 
 fclean: clean
 	$(RM) ${NAME}
 
 re: fclean all
 
-all: $(NAME) bonus printf
+all: $(NAME) bonus printf gnl
 
 .PHONY: all clean fclean re bonus
