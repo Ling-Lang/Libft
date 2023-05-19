@@ -6,17 +6,18 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:53:20 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/18 13:15:39 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/05/19 12:16:23 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include "ft_printf.h"
+# include "gnl/get_next_line_bonus.h"
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdint.h>
-#include "ft_printf.h"
-#include "gnl/get_next_line_bonus.h"
+
 typedef struct s_list
 {
 	void			*content;

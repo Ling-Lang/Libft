@@ -55,7 +55,8 @@ char	*ft_strjoin_gnl(char *left_str, char *buff)
 	}
 	if (!left_str || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen_gnl(left_str) + ft_strlen_gnl(buff)) + 1));
+	str = malloc(sizeof(char) * ((ft_strlen_gnl(left_str) + ft_strlen_gnl(buff))
+				+ 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
