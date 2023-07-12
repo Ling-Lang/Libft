@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:53:20 by jkulka            #+#    #+#             */
-/*   Updated: 2023/05/19 12:16:23 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/07/12 18:29:47 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *str, unsigned int start, size_t n);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+int					ft_strcmp(const char *s1, const char *s2);
 #endif
