@@ -7,7 +7,7 @@ AR		= ar
 ARFLAGS = -rcs
 INCFLAG	= -I .
 
-MANDO = src/ft_atoi.c \
+SRC = src/ft_atoi.c \
 		src/ft_bzero.c \
 		src/ft_calloc.c \
 		src/ft_isalnum.c \
@@ -56,28 +56,34 @@ PRINTF = src/ft_iutils.c \
 		src/ft_printf_utils.c \
 		src/ft_printf_utils_2.c
 
-MANDOOBJ	= $(MANDO:.c=.o)
+OBJ	= $(SRC:.c=.o)
 BONUSOBJ = $(BONUS:.c=.o)
 PRINTFOBJ = $(PRINTF:.c=.o)
 
+GREEN = \033[0;32m
+YELLOW = \033[1;33m
+RESET = \033[0m
 
-$(NAME): $(MANDOOBJ) $(PRINTFOBJ)
-	$(AR) $(ARFLAGS) $@ $^
+
+$(NAME): $(OBJ) $(PRINTFOBJ) $(BONUSOBJ)
+	@$(AR) $(OBJ) $(BONUSOBJ) $(PRINTFOBJ) $(ARFLAGS) $@
+	@echo "$(GREEN) Compiling $@ to library$(RESET)"
 
 bonus: $(BONUSOBJ)
-	$(AR) $(ARFLAGS) $(NAME) $^
+	@$(AR) $(ARFLAGS) $(NAME) $^
+	@echo "$(GREEN) Compiling bonus$(RESET)"
 
 printf: $(PRINTFOBJ)
-	$(AR) $(ARFLAGS) $(NAME) $^
-
-%.o : %.c
-	$(CC) -c $(CFLAGS) $(INCFLAG) $< -o $@
+	@$(AR) $(ARFLAGS) $(NAME) $^
+	@echo "$(GREEN) Compiling ft_printf$(RESET)"
 
 clean:
-	$(RM) $(MANDOOBJ) $(BONUSOBJ) $(PRINTFOBJ)
+	@$(RM) $(OBJ) $(BONUSOBJ) $(PRINTFOBJ)
+	@echo "$(YELLOW)Cleaning object files$(RESET)"
 
 fclean: clean
 	$(RM) ${NAME}
+	@echo "$(YELLOW) Cleaning library$(RESET)"
 
 re: fclean all
 
