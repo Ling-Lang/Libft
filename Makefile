@@ -1,4 +1,3 @@
-
 NAME = libft.a
 RM = rm -f
 CC = cc
@@ -66,8 +65,11 @@ RESET = \033[0m
 
 
 $(NAME): $(OBJ) $(PRINTFOBJ) $(BONUSOBJ)
-	@$(AR) $(OBJ) $(BONUSOBJ) $(PRINTFOBJ) $(ARFLAGS) $@
+	@$(AR) $(ARFLAGS) $@ $(OBJ) $(BONUSOBJ) $(PRINTFOBJ)
 	@echo "$(GREEN) Compiling $@ to library$(RESET)"
+
+%.o : %.c
+	@$(CC) -c $< -o $@
 
 bonus: $(BONUSOBJ)
 	@$(AR) $(ARFLAGS) $(NAME) $^
@@ -82,7 +84,7 @@ clean:
 	@echo "$(YELLOW)Cleaning object files$(RESET)"
 
 fclean: clean
-	$(RM) ${NAME}
+	@$(RM) ${NAME}
 	@echo "$(YELLOW) Cleaning library$(RESET)"
 
 re: fclean all
