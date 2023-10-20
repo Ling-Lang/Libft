@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:17:19 by jkulka            #+#    #+#             */
-/*   Updated: 2022/11/14 14:38:39 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/10/20 11:19:25 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_atoi(char *str)
 	sign = 1;
 	base = 0;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r'
+	while (str[i] == ' ' || str[i] == '\t'
+		|| str[i] == '\n' || str[i] == '\r'
 		|| str[i] == '\v' || str[i] == '\f')
 	{
 		i++;
