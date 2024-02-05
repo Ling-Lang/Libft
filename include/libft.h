@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:53:20 by jkulka            #+#    #+#             */
-/*   Updated: 2024/02/05 12:28:52 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/02/05 12:53:02 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ int					ft_toupper(int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strcmp_cub3d(const char *s1, const char *s2);
 char				*ft_strncpy(char *src, char *dst, int n);
+char				*ft_strcpy(char *dst, const char *src);
 #endif
