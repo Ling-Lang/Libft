@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:07:43 by jkulka            #+#    #+#             */
-/*   Updated: 2024/02/05 12:30:35 by jkulka           ###   ########.fr       */
+/*   Updated: 2024/02/05 12:35:22 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*gnl_ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *left_str, char *buff)
+char	*gnl_ft_strjoin(char *left_str, char *buff)
 {
 	size_t	i;
 	size_t	j;
