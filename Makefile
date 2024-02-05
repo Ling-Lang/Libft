@@ -40,7 +40,8 @@ SRC = 	src/libft/ft_atoi.c \
 		src/libft/ft_tolower.c \
 		src/libft/ft_toupper.c \
 		src/libft/ft_strcmp.c \
-		src/libft/ft_strncpy.c
+		src/libft/ft_strncpy.c \
+		src/libft/ft_strcpy.c
 
 BONUS = src/libft/ft_lstadd_back_bonus.c \
 		src/libft/ft_lstadd_front_bonus.c \
