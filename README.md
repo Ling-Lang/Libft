@@ -9,7 +9,6 @@ git clone https://github.com/Ling-Lang/Libft.git
 cd Libft
 make
 ```
-![Tux, the Linux mascot](https://i.imgur.com/uTRrq8F.jpeg)
 ## Usage
 
 ```c
